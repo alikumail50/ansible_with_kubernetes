@@ -1,0 +1,14 @@
+all:
+  hosts:
+    pod1:
+      ansible_connection: community.kubernetes.kubectl
+      ansible_kubectl_namespace: default
+      ansible_kubectl_pod: nginx-69477c5c97-d4lgf
+    pod2:
+      ansible_connection: community.kubernetes.kubectl
+      ansible_kubectl_namespace: default
+      ansible_kubectl_pod: nginx-69477c5c97-fsdfs
+    pod3:
+      ansible_connection: community.kubernetes.kubectl
+      ansible_kubectl_namespace: default
+      ansible_kubectl_pod: nginx-69477c5c97-xs8h2

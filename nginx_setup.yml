@@ -1,0 +1,20 @@
+---
+- name: Configure Nginx on Kubernetes Pods
+  hosts: all
+  become: no  # Disable privilege escalation
+  tasks:
+    - name: Copy custom Nginx configuration
+      copy:
+        content: |
+          server {
+              listen 80;
+              server_name localhost;
+              location / {
+                  add_header Content-Type text/plain;
+                  return 200 "Hello from Pod: {{ ansible_kubectl_pod }}\n";
+              }
+          }
+        dest: /etc/nginx/conf.d/custom.conf
+
+    - name: Reload Nginx
+      command: nginx -s reload
