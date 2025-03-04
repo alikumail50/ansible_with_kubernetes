@@ -3,12 +3,12 @@ all:
     pod1:
       ansible_connection: community.kubernetes.kubectl
       ansible_kubectl_namespace: default
-      ansible_kubectl_pod: nginx-69477c5c97-d4lgf
+      ansible_kubectl_pod: nginx-<UNIQUE_ID>
     pod2:
       ansible_connection: community.kubernetes.kubectl
       ansible_kubectl_namespace: default
-      ansible_kubectl_pod: nginx-69477c5c97-fsdfs
+      ansible_kubectl_pod: nginx-<UNIQUE_ID>
     pod3:
       ansible_connection: community.kubernetes.kubectl
       ansible_kubectl_namespace: default
-      ansible_kubectl_pod: nginx-69477c5c97-xs8h2
+      ansible_kubectl_pod: nginx-<UNIQUE_ID>
